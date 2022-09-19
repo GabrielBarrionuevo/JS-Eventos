@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <!-- Menu principal -->
+        <h1>NombreLocal</h1>
+        <div id="contenedorCarrito">
+            <a id="linkCarrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <img src="" alt="Carrito de compras">
+            </a>
+        </div>
+    </header>
+
+    <div id="principal"> 
+
+        <!-- Aside -->
+        <aside id="aside">
+
+            <!-- Agregar Nombre -->
+            <input id="agregaNombre" placeholder="Agregue su nombre">
+
+            <!-- Agregar crédito -->
+            <input id="agregaSaldo" placeholder="Agregue crédito disponible">
+            <!-- Hacer que vaya devolviendo los creditos disponibles conforme se agregan al carrito. -->
+            <button class="btn-accion btn-nombreSaldo" type="submit" id="btn-nombreSaldo">Aplicar</button>
+
+            <!-- BUSCAR POR NOMBRE -->
+            <input id="buscaXNombre" placeholder="Buscar por nombre">
+            <div id="filtradoPorNombre"></div>
+            <button class="btn-accion btn-filtroNombre" type="submit" id="btn-filtrarNombre">Aplicar</button>
+
+            <!-- FILTRAR POR PRECIO -->
+            <section>
+                <article>
+                    <form id="Checkbox">
+                        <fieldset class="filtros">
+                            <legend>Ingrese rango de precios</legend>
+                            <!-- Agregar barra doble para máximo y mínimo -->
+                            <div class="slidecontainer">
+                                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                            </div>
+                        </fieldset>
+                    </form>
+                </article>
+            </section>
+
+            <!-- FILTRAR POR CATEGORIAS -->
+            <section>
+                <article>
+                    <form id="Checkbox">
+                        <fieldset class="filtros">
+                            <legend>Categorias</legend>
+                            <label for="Categoria01">
+                                <input type="checkbox">Categoria01
+                            </label>
+                            <label for="Categoria02">
+                                <input type="checkbox">Categoria02
+                            </label>
+                            <label for="Categoria03">
+                                <input type="checkbox">Categoria03
+                            </label>
+                            <label for="Categoria04">
+                                <input type="checkbox">Categoria04
+                            </label>
+                            <button class="btn-accion btn-filtro" type="submit" id="btn-filtrar">Aplicar</button>
+                        </fieldset>
+                    </form>
+                </article>
+            </section>
+        </aside>
+
+        <main id="main">
+            <div class="contenedorSaludo"></div>
+            <div class="contenedorDinero"></div>
+            <h2>Papitas</h2>
+            <section class="contenedor">
+                <!-- <article class="contProducto">
+                    <img src="" alt="">
+                    <div class="Contenido">
+                        <p>Tipo de producto</p>
+                        <p>Precio</p>
+                    </div>
+
+                    <div class="">
+                        <button class="btn-comprar">Agregar al carrito</button>
+                    </div>
+                </article> -->
+        </main>
+
+        <footer>
+            <div id="contSocial">
+                <h3>Redes Sociales</h3>
+                <!-- Icono redes -->
+                <div>
+            </div>
+            <p>Hecho por...</p>
+        </footer>
+    </div>
+
+    <script src="javaScript.js"></script>
+</body>
+</html>
