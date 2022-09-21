@@ -34,20 +34,24 @@
             </form>
 
             <!-- BUSCAR POR NOMBRE -->
-            <input id="buscaXNombre" placeholder="Buscar por nombre">
-            <div id="filtradoPorNombre"></div>
-            <button class="btn-accion btn-filtroNombre" type="submit" id="btn-filtrarNombre">Aplicar</button>
-
+            <form id="form-buscarXNombre">
+                <input id="buscaXNombre" placeholder="Buscar por nombre">
+                <div id="filtradoPorNombre"></div>
+                <button class="btn-accion btn-filtroNombre" type="submit" id="btn-filtrarNombre">Aplicar</button>
+            </form>
             <!-- FILTRAR POR PRECIO -->
             <section>
                 <article>
-                    <form id="Checkbox">
+                    <form id="form-buscarXRango">
                         <fieldset class="filtros">
                             <legend>Ingrese rango de precios</legend>
                             <!-- Agregar barra doble para máximo y mínimo -->
-                            <div class="slidecontainer">
+                            <!-- <div class="slidecontainer">
                                 <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                            </div>
+                            </div> -->
+                            <input id="baseDePrecio" placeholder="Precio mínimo">
+                            <input id="topeDeprecio" placeholder="Precio máximo">
+                            <button class="btn-accion btn-filtrarXRango" type="submit" id="btn-filtrarXRango">Aplicar</button>
                         </fieldset>
                     </form>
                 </article>
@@ -81,6 +85,7 @@
         <main id="main">
             <div class="contenedorSaludo"></div>
             <div class="contenedorDinero"></div>
+            <div class="contenedorBuscarXNombre"></div>
             <h2>Papitas</h2>
             <section class="contenedor">
                 <!-- <article class="contProducto">

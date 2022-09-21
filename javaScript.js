@@ -37,6 +37,7 @@ function papitas(nombre, precio, categoria, descripcion){
 
 let listaPapitas = [
     { nombre: "Clasica",         precio: 10, categoria: "normal",   descripcion: "Solo papitas" },
+    { nombre: "Clasica",         precio: 20, categoria: "deluxe",   descripcion: "Solo papitas" },
     { nombre: "Cheddar",         precio: 15, categoria: "normal",   descripcion: "Con queso cheddar" },
     { nombre: "Wasabi",          precio: 15, categoria: "normal",   descripcion: "Con condimento picante wasabi" },
     { nombre: "Wacamole",        precio: 20, categoria: "premium",  descripcion: "Con wacamole. Se le puede agregar tomate." },
@@ -89,8 +90,8 @@ let listaPapitas = [
 // FILTRAR POR PRECIO //
 ////////////////
 ////////////////
-// let baseDePrecio = Number(prompt("Ingrese precio Mínimo"));
-// let topeDePrecio = Number(prompt("Ingrese precio máximo"));
+//let baseDePrecio = Number(prompt("Ingrese precio Mínimo"));
+//let topeDePrecio = Number(prompt("Ingrese precio máximo"));
 // let preciosFiltrados = listaPapitas.filter(listaPapitas => (listaPapitas.precio <= topeDePrecio) && (listaPapitas.precio >= baseDePrecio));
 // console.log(preciosFiltrados);
 
@@ -141,7 +142,7 @@ function saludo(){
     `;
     main.appendChild(contenedorSaludo);
 }
-    
+
 //Dinero!
 // let contenedorDinero = document.createElement("h2");
 // contenedorDinero.innerHTML = `
@@ -191,22 +192,71 @@ btnAgregoNombre.addEventListener("submit", validarEnvio);
 function validarEnvio(e){
     e.preventDefault();
     alert(`Bienvenido ${eventKeyNombre.value}!! Tu saldo es de: $${eventKeySaldo.value}`);
+
     let contenedorDinero = document.createElement("h3");
     contenedorDinero.innerHTML = `
     <h3>Dinero de ${eventKeyNombre.value}: $${eventKeySaldo.value}</h3>
     `;
     main.appendChild(contenedorDinero);
-    };
+};
 
 
-// Agrego buscaXNombre
-const eventKeyXNombre = document.querySelector("#buscaXNombre");
-eventKeyXNombre.addEventListener("input", (e)=>{
+////////////////////////////////
+//// Agrego buscaXNombre
+const eventKeyBuscarPorNombre = document.querySelector("#buscaXNombre");
+eventKeyBuscarPorNombre.addEventListener("input", (e)=>{
     console.log(e.target.value)
     }
 );
+
+let btnBuscarXNombre = document.querySelector("#form-buscarXNombre");
+btnBuscarXNombre.addEventListener("submit", buscarXNombre);
+
+function buscarXNombre(e){
+    e.preventDefault();
+//    alert(`${eventKeyBuscarPorNombre.value}`)
+
+    let nombreFiltrado = listaPapitas.filter(papita => papita.nombre == eventKeyBuscarPorNombre.value);
+    console.log(nombreFiltrado);
+
+    for (papita of nombreFiltrado) {
+        let contenedorBuscarXNombre = document.createElement("article");
+        contenedorBuscarXNombre.innerHTML = `
+            <article class="contProducto">
+                <img src="" alt="">
+                <div class="Contenido">
+                    <p>${papita.nombre}</p>
+                    <p>${papita.precio}</p>
+                </div>
+                <div>
+                    <button class="btn-comprar">Agregar al carrito</button>
+                </div>
+            </article>
+        `;
+        aside.appendChild(contenedorBuscarXNombre);
+    }
+};
+////////////////////////////////
+////////////////////////////////
+
 //Rango de precios
+// NO FINALIZADO //
+// let baseDePrecio = Number(prompt("Ingrese precio Mínimo"));
+// let topeDePrecio = Number(prompt("Ingrese precio máximo"));
+
+// let btnBuscarXRango = document.querySelector("#form-buscarXRango");
+// btnBuscarXRango.addEventListener("subit", buscarXRango);
+
+// function buscarXRango(e) {
+//     e.preventDefault();
+
+//     let filtradoXRango = listaPapitas.filter(papita => (papita.precio == topeDePrecio && papita.precio == baseDePrecio));
+//     console.log(filtradoXRango);
+// };
+
 //Categorias
+
+
 
 
 
