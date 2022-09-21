@@ -1,8 +1,10 @@
 // DECLARAMOS //
 ////////////////
 ////////////////
-let nombreUsuario = prompt("Ingrese su nombre.");
-let dineroUsuario = Number(prompt("Ingrese la cantidad de dinero que posee."))
+let nombreUsuario; 
+let dineroUsuario;
+////let nombreUsuario = prompt("Ingrese su nombre.");
+////let dineroUsuario = Number(prompt("Ingrese la cantidad de dinero que posee."))
 let opcion1;
 let opcion2;
 function compraPapitas(valor, nombrePapita){
@@ -54,77 +56,77 @@ let listaPapitas = [
 // COMPRA DE PAPITAS //
 ////////////////
 ////////////////
-while (opcion1 != 8) {
-    opcion1 = prompt(`Su saldo es de $${dineroUsuario}. Qué desea comprar?
-    1- Papitas clásicas $10
-    2- Papitas con chedar $15
-    3- Papitas sabor wasabi $15
-    4- Papitas con wacamole $20
-    5- Papitas con queso crema y cebolla $20
-    6- Papitas con queso gratinado $30
-    7- Papitas con sal marina $35.
-    8- No comprar nada.
-    `)
+// while (opcion1 != 8) {
+//     opcion1 = prompt(`Su saldo es de $${dineroUsuario}. Qué desea comprar?
+//     1- Papitas clásicas $10
+//     2- Papitas con chedar $15
+//     3- Papitas sabor wasabi $15
+//     4- Papitas con wacamole $20
+//     5- Papitas con queso crema y cebolla $20
+//     6- Papitas con queso gratinado $30
+//     7- Papitas con sal marina $35.
+//     8- No comprar nada.
+//     `)
     
-    if (opcion1 <= 7) {
-        compraPapitas(Number(listaPapitas[opcion1 -1].precio), listaPapitas[opcion1 -1].nombre);
-    }    
-    else if (opcion1 = 8) {
-        dineroUsuario = dineroUsuario;
-        alert(`Su dinero es de $${dineroUsuario}. Adios!`); 
-    }
-    else {
-        alert(`Ingrese un número válido.`);
-    };
-}
+//     if (opcion1 <= 7) {
+//         compraPapitas(Number(listaPapitas[opcion1 -1].precio), listaPapitas[opcion1 -1].nombre);
+//     }    
+//     else if (opcion1 = 8) {
+//         dineroUsuario = dineroUsuario;
+//         alert(`Su dinero es de $${dineroUsuario}. Adios!`); 
+//     }
+//     else {
+//         alert(`Ingrese un número válido.`);
+//     };
+// }
 // BUSCAR POR NOMBRE //
 ////////////////
 ////////////////
-let nombreBuscado = prompt("Ingrese nombre de papita");
-let nombreFiltrado = listaPapitas.filter(listaPapitas => (listaPapitas.nombre === nombreBuscado));
-console.log(nombreFiltrado);
+////let nombreBuscado = prompt("Ingrese nombre de papita");
+////let nombreFiltrado = listaPapitas.filter(listaPapitas => (listaPapitas.nombre === nombreBuscado));
+////console.log(nombreFiltrado);
 
 // FILTRAR POR PRECIO //
 ////////////////
 ////////////////
-let baseDePrecio = Number(prompt("Ingrese precio Mínimo"));
-let topeDePrecio = Number(prompt("Ingrese precio máximo"));
-let preciosFiltrados = listaPapitas.filter(listaPapitas => (listaPapitas.precio <= topeDePrecio) && (listaPapitas.precio >= baseDePrecio));
-console.log(preciosFiltrados);
+// let baseDePrecio = Number(prompt("Ingrese precio Mínimo"));
+// let topeDePrecio = Number(prompt("Ingrese precio máximo"));
+// let preciosFiltrados = listaPapitas.filter(listaPapitas => (listaPapitas.precio <= topeDePrecio) && (listaPapitas.precio >= baseDePrecio));
+// console.log(preciosFiltrados);
 
 // FILTRAR POR CATEGORIAS //
 ////////////////
 ////////////////
-let categoriaBuscada = prompt("Ingrese nombre de categoria");
-let categoriasFiltradas = listaPapitas.filter(listaPapitas => (listaPapitas.categoria === categoriaBuscada));
-console.log(categoriasFiltradas);
+////let categoriaBuscada = prompt("Ingrese nombre de categoria");
+////let categoriasFiltradas = listaPapitas.filter(listaPapitas => (listaPapitas.categoria === categoriaBuscada));
+////console.log(categoriasFiltradas);
 
 // AGREGAR AL CARRITO //
 ////////////////
 ////////////////
-while (opcion2 != 8) {
-    opcion2 = prompt(`Ingrese papita a agregar al carrito 
-    1- Papitas clásicas $10
-    2- Papitas con chedar $15
-    3- Papitas sabor wasabi $15
-    4- Papitas con wacamole $20
-    5- Papitas con queso crema y cebolla $20
-    6- Papitas con queso gratinado $30
-    7- Papitas con sal marina $35.
-    8- Finalizar compra.
-    `)
+// while (opcion2 != 8) {
+//     opcion2 = prompt(`Ingrese papita a agregar al carrito 
+//     1- Papitas clásicas $10
+//     2- Papitas con chedar $15
+//     3- Papitas sabor wasabi $15
+//     4- Papitas con wacamole $20
+//     5- Papitas con queso crema y cebolla $20
+//     6- Papitas con queso gratinado $30
+//     7- Papitas con sal marina $35.
+//     8- Finalizar compra.
+//     `)
 
-    if (opcion2 <= 7) {
-        listaCarrito.push(listaPapitas[opcion2 - 1]);
-    }    
-    else if (opcion2 = 8) {
-        alert(`Su carrito es: $${listaCarrito}. Adios!`);
-    }
-    else {
-        alert(`Ingrese un número válido.`);
-    };
-}
-console.log(listaCarrito);
+//     if (opcion2 <= 7) {
+//         listaCarrito.push(listaPapitas[opcion2 - 1]);
+//     }    
+//     else if (opcion2 = 8) {
+//         alert(`Su carrito es: $${listaCarrito}. Adios!`);
+//     }
+//     else {
+//         alert(`Ingrese un número válido.`);
+//     };
+// }
+// console.log(listaCarrito);
 
 
 ///////////////////
@@ -132,18 +134,20 @@ console.log(listaCarrito);
 ///////////////////
 
 //Saludo!
-let contenedorSaludo = document.createElement("h2");
-contenedorSaludo.innerHTML = `
+function saludo(){
+    let contenedorSaludo = document.createElement("h2");
+    contenedorSaludo.innerHTML = `
     <h2>${randomSaludos}</h2>
-`;
-main.appendChild(contenedorSaludo);
-
+    `;
+    main.appendChild(contenedorSaludo);
+}
+    
 //Dinero!
-let contenedorDinero = document.createElement("h2");
-contenedorDinero.innerHTML = `
-    <h3>Dinero de ${nombreUsuario}: $${dineroUsuario}</h3>
-`;
-main.appendChild(contenedorDinero);
+// let contenedorDinero = document.createElement("h2");
+// contenedorDinero.innerHTML = `
+//     <h3>Dinero de ${nombreUsuario}: $${dineroUsuario}</h3>
+// `;
+// main.appendChild(contenedorDinero);
 
 //Listado productos 
 for (papita of listaPapitas) {
@@ -179,6 +183,22 @@ eventKeySaldo.addEventListener("input", (e)=>{
     console.log(e.target.value)
     }
 );
+
+//Botón envio
+let btnAgregoNombre = document.querySelector("#form-nombreSaldo");
+btnAgregoNombre.addEventListener("submit", validarEnvio);
+
+function validarEnvio(e){
+    e.preventDefault();
+    alert(`Bienvenido ${eventKeyNombre.value}!! Tu saldo es de: $${eventKeySaldo.value}`);
+    let contenedorDinero = document.createElement("h3");
+    contenedorDinero.innerHTML = `
+    <h3>Dinero de ${eventKeyNombre.value}: $${eventKeySaldo.value}</h3>
+    `;
+    main.appendChild(contenedorDinero);
+    };
+
+
 // Agrego buscaXNombre
 const eventKeyXNombre = document.querySelector("#buscaXNombre");
 eventKeyXNombre.addEventListener("input", (e)=>{
@@ -189,6 +209,4 @@ eventKeyXNombre.addEventListener("input", (e)=>{
 //Categorias
 
 
-const btnAgregoNombre = document.querySelector("#agregaNombre");
-console.log(btnAgregoNombre);
 
