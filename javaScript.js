@@ -256,7 +256,3 @@ function buscarXNombre(e){
 
 //Categorias
 
-
-
-
-
